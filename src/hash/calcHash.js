@@ -6,7 +6,7 @@ import {createHash} from 'crypto'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-const calculateHash = async () => {
+export const calculateHash = async () => {
     const hash = createHash('sha256');
     const file = await fs.readFile(__dirname + '/files/fileToCalculateHashFor.txt');
     hash.update(file);
