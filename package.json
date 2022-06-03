@@ -11,7 +11,15 @@
     "fs/delete": "node ./src/fs/delete.js",
     "fs/list": "node ./src/fs/list.js",
     "fs/read": "node ./src/fs/read.js",
-    "cli/args": "node ./src/cli/args.js --propName value --prop2Name value2"
+    "cli/env": "set RSS_name1=value1&& set RSS_name2=value2&& node ./src/cli/env.js",
+    "cli/args": "node ./src/cli/args.js --propName value --prop2Name value2",
+    "modules/cjsToEsm": "node ./src/modules/index.js",
+    "hash/calcHash": "node ./src/hash/calcHash.js",
+    "streams/read": "node ./src/streams/read.js",
+    "streams/write": "node ./src/streams/write.js",
+    "streams/transform": "node ./src/streams/transform.js",
+    "zip/compress": "node ./src/zip/compress.js",
+    "zip/decompress": "node ./src/zip/decompress.js"
   },
   "repository": {
     "type": "git",
