@@ -11,7 +11,7 @@ const workerPromise = (index, workerData) => () => new Promise((resolve) => {
         workerData,
     });
 
-    worker.on("error", () => {
+    worker.on("error", (error) => {
         resolve({ workerId: index, data: null, status: "error" });
     });
     worker.on("message", (result) => {
@@ -19,8 +19,7 @@ const workerPromise = (index, workerData) => () => new Promise((resolve) => {
     });
 });
 
-
-const performCalculations = async () => {
+export const performCalculations = async () => {
     const workers = [];
     for (let index = 0; index < cpus().length; index++) {
         workers.push(workerPromise(index + 1, 10 + index));
@@ -30,3 +29,4 @@ const performCalculations = async () => {
 };
 
 console.log(await performCalculations());
+
