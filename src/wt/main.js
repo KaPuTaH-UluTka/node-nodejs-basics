@@ -11,7 +11,7 @@ const workerPromise = (index, workerData) => () => new Promise((resolve) => {
         workerData,
     });
 
-    worker.on("error", (error) => {
+    worker.on("error", () => {
         resolve({ workerId: index, data: null, status: "error" });
     });
     worker.on("message", (result) => {
